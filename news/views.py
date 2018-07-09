@@ -4,6 +4,9 @@ import datetime as dt
 
 # Create your views here.
 def welcome(request):
+    '''
+    function for the landing page on the news route
+    '''
     return HttpResponse('Welcome to the Moringa Tribune')
 
 def news_of_day(request):
@@ -34,6 +37,9 @@ def convert_dates(dates):
     return day
 
 def news_of_day(request):
+    '''
+    function to display news of that specific day
+    '''
     date = dt.date.today()
 
     # FUNCTION TO CONVERT DATE OBJECT TO FIND EXACT DAY
@@ -48,6 +54,9 @@ def news_of_day(request):
     return HttpResponse(html)
 
 def past_days_news(request,past_date):
+    '''
+    function to display news from dates that have already passed
+    '''
 
     try:
         # Converts data from the string Url
