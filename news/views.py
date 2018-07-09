@@ -9,21 +9,10 @@ def welcome(request):
     '''
     return render(request, 'welcome.html')
 
-def news_of_day(request):
-    """
-    function that adds dynamic content(date) to the website
-    """
-    date = dt.date.today()
-    html = f'''
-        <html>
-            <body>
-                <h1> {date.day}-{date.month}-{date.year}</h1>
-            </body>
-        </html>
-            '''
-    return HttpResponse(html)
-
 def news_today(request):
+    '''
+    function to display the day's news
+    '''
     date = dt.date.today()
     return render(request, 'all-news/today-news.html', {"date": date,})
 
