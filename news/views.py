@@ -56,3 +56,15 @@ def past_days_news(request,past_date):
     except ValueError:
         # Raise 404 error when ValueError is thrown
         raise Http404()
+        # Converts data from the string Url
+        date = dt.datetime.strptime(past_date,'%Y-%m-%d').date()
+
+    day = convert_dates(date)
+    html = f'''
+        <html>
+            <body>
+                <h1>News for {day} {date.day}-{date.month}-{date.year}</h1>
+            </body>
+        </html>
+            '''
+    return HttpResponse(html)
