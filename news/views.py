@@ -7,7 +7,7 @@ def welcome(request):
     '''
     function for the landing page on the news route
     '''
-    return HttpResponse('Welcome to the Moringa Tribune')
+    return render(request, 'welcome.html')
 
 def news_of_day(request):
     """
